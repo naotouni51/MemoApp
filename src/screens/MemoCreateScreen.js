@@ -14,8 +14,8 @@ class MemoCreateScreen extends React.Component {
     const { params } = this.props.navigation.state;
     const db = firebase.firestore();
     db.collection(`users/${params.currentUser.user.uid}/memos`).add({
-      body: 'Hi',
-      created_on: '2019-07-18'
+      body: this.state.body,
+      created_on: new Date(),
     })
       .then((docRef) => {
         console.log("Document written with ID: ", docRef.id);
@@ -35,7 +35,7 @@ class MemoCreateScreen extends React.Component {
           value={this.state.body}
           onChangeText={(text) => {this.setState({ body: text })}}
         />
-        <CircleButton name="check" onPress={this.handlePress()} />
+        <CircleButton name="check" onPress={() => this.handlePress()} />
       </View>
     );
   }
