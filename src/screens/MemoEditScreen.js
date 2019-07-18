@@ -34,6 +34,7 @@ class MemoEditScreen extends React.Component {
           key: this.state.key,
           created_on: newDate,
         });
+      navigation.goBack();
       })
       .catch((error) => {
         console.log(error);
@@ -51,7 +52,7 @@ class MemoEditScreen extends React.Component {
         />
         <CircleButton
           name="check"
-          onPress={ this.handlePress() }
+          onPress={ () => {this.handlePress()} }
         />
       </View>
     );
