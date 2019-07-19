@@ -60,6 +60,7 @@ const styles = StyleSheet.create({
   circleButton: {
     width: 48,
     height: 48,
+    margin: 8,
     borderRadius: 24,
     justifyContent: 'center',
     alignItems: 'center',
@@ -72,7 +73,7 @@ const styles = StyleSheet.create({
         zIndex: 10,
       },
       android: {
-        elevation: 1,
+        elevation: 4,
       },
     }),
   },
